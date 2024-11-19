@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PollyGlot Translation App
 
-## Getting Started
+A Next.js-based real-time translation application that supports speech-to-text, text-to-speech, and file uploads. The app uses OpenAI's model for translations and features a modern, responsive UI built with shadcn/ui components.
 
-First, run the development server:
+![PollyGlot Translation App Demo](https://magical-nasturtium-d3aa79.netlify.app/)
 
+## Features
+
+- Real-time translation to English from multiple languages
+- Speech-to-text input capability
+- Text-to-speech output for translations
+- File upload support (.txt files, with PDF/DOC support coming soon)
+- Modern, responsive UI with dark mode support
+- Language selection
+- Toast notifications for user feedback
+
+## Prerequisites
+
+- Node.js 16.x or later
+- npm or yarn package manager
+- OpenAI API key
+
+## Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/pollyglot-translation.git
+cd pollyglot-translation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env.local` file in the root directory:
+```
+OPENAI_API_KEY=your_api_key_here
+ELEVENLABS_API_KEY=your_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Running the Application
 
-## Learn More
+Development mode:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+The application will be available at `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js 14
+- React
+- TypeScript
+- OpenAI API
+- shadcn/ui components
+- Tailwind CSS
+- Lucide React Icons
+- Sonner (Toast notifications)
 
-## Deploy on Vercel
+## Important Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **File Upload Limitations**:
+   - Maximum file size: 5MB
+   - Supported formats: .txt (PDF/DOC support coming soon)
+   - Implementation is coming up (cooking something special)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Browser Compatibility**:
+   - Speech-to-text requires browser permissions for microphone access
+   - Text-to-speech requires modern browser support
+
+4. **Rate Limiting**:
+   - Be mindful of LLM API usage limits
+   - Implement appropriate rate limiting for production use
