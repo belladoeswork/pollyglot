@@ -2,7 +2,7 @@
 
 A Next.js-based real-time translation application that supports speech-to-text, text-to-speech, and file uploads. The app uses OpenAI's model for translations and features a modern, responsive UI built with shadcn/ui components.
 
-![PollyGlot Translation App Demo](https://magical-nasturtium-d3aa79.netlify.app/)
+Live site (https://magical-nasturtium-d3aa79.netlify.app/)
 
 ## Features
 
@@ -74,4 +74,4 @@ The application will be available at `http://localhost:3000`
    - Be mindful of LLM API usage limits
    - Implement appropriate rate limiting for production use
 
-![Same app other code here](https://github.com/belladoeswork/polly_flask.git)
+[Same app with flask](https://github.com/belladoeswork/polly_flask.git)
