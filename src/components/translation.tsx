@@ -29,20 +29,33 @@ const TranslationApp = () => {
   const [mounted, setMounted] = useState(false);
 
 
-  useEffect(() => {
-    setMounted(true);
+  // useEffect(() => {
+  //   setMounted(true);
 
-    audioRef.current = new Audio();
+  //   audioRef.current = new Audio();
+  //   return () => {
+  //     if (audioURL) {
+  //       URL.revokeObjectURL(audioURL);
+  //     }
+  //   };
+  // }, []);
+
+  // if (!mounted) {
+  //   return null;
+  // }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      audioRef.current = new Audio();
+    }
+    
     return () => {
       if (audioURL) {
         URL.revokeObjectURL(audioURL);
       }
+      stopRecording();
     };
   }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   const startRecording = async () => {
     try {
